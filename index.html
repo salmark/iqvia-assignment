@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Dashboard</title>
+
+  <!-- Custom fonts-->
+  <link href="plugins/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- data table plugin CSS-->
+  <link href="plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="plugins/datatables/select.dataTables.min.css" rel="stylesheet">
+
+  <!-- styles for this template-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand navbar-dark bg-blue static-top">
+    <a class="navbar-brand mr-1 navbar-custom" href="index.html"><strong>Health Financing</strong><br />Performance
+      Insight</a>
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0 sidebarToggle" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+      <span>Dashboard</span>
+    </button>
+    <ul class="nav  top-nav">
+      <li class="nav-item">
+        <a class="nav-link active text-white" href="#"><i class="fas fa-flag fa-fw pr-2"></i>Transaction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#"><i class="fas fa-question-circle fa-fw pr-2"></i>Rule Engine</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#"><i class="fas fa-file fa-fw pr-2"></i>Administration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#"><i class="fas fa-cog pr-2"></i>Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#"><i class="fas fa-file fa-fw pr-2"></i>File Management</a>
+      </li>
+    </ul>
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0 nav-right">
+      <li class="nav-item mx-1">
+        <a class="nav-link " href="#" id="alerts" role="button">
+          <i class="fas fa-bell fa-fw"></i>
+        </a>
+      </li>
+      <li class="nav-item dropdown  mx-1">
+        <a class="nav-link" href="#" id="messages" role="button">
+          <i class="fas fa-envelope fa-fw"></i>
+          <span class="badge badge-danger">10</span>
+        </a>
+      </li>
+      <li class="nav-item mx-1">
+        <a class="nav-link" href="#" id="user" role="button">
+          <i class="fas fa-cog fa-fw"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="user" role="button">
+          <i class="fas fa-user-circle fa-fw"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link pt-4" href="index.html">
+
+          <span></span><img src="img/dha-logo.jpg" class="sidebar-logo"></span>&nbsp; Dubai Health Authority</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-question-circle"></i>
+          <span>Questions</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-flag"></i>
+          <span>spots</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-calendar-week"></i>
+          <span>Report Schedule</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-bell"></i>
+          <span>Notification</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Settings</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <a class="dropdown-item" href="login.html">Submenu 01</a>
+          <a class="dropdown-item" href="register.html">Submenu 02</a>
+          <a class="dropdown-item" href="forgot-password.html">Submenu 03</a>
+        </div>
+      </li>
+    </ul>
+
+    <div id="content-wrapper" class="bg-lightgray">
+      <div class="container-fluid mt-4">
+
+        <!-- DataTables Example -->
+        <div class="card mb-3 datatable-holder">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a><i
+                        class="fas fa-arrow-right text-secondary pl-2"></i>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Table and Action Components</li>
+                  </ol>
+                </nav>
+              </div>
+              <div class="col-md-6 px-0 d-none d-sm-block">
+                <ul class="nav pt-2 nav-table">
+                  <li class="nav-item">
+                    <a class="btn btn-danger btn-sm pr-3" href="#"><i class="fa fa-plus pr-2"></i>Add</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn btn-primary btn-sm pr-3" href="#"><i class="fa fa-plus pr-2"></i>Add Medication</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn btn-success btn-sm pr-3" href="#"><i class="fa fa-plus pr-2"></i>Add Medication</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-success" href="#"><i class="fa fa-plus pr-2"></i>Add Medication</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-2 icon-btn d-none d-sm-block">
+                <ul class="nav pt-2">
+                  <li class="nav-item">
+                    <a class="btn-circle pr-3" href="#"><i class="fa fa-plus pr-2"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn-circle pr-3" href="#"><i class="fa fa-search pr-2"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn-circle pr-3" href="#"><i class="fa fa-cog pr-2"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn-circle" href="#"><i class="fa fa-bars pr-2"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-body data_table p-0">
+            <div class="table-responsive">
+              <table id="data-table" class="table table-striped" style="width:100%">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Reference ID</th>
+                    <th>Provider</th>
+                    <th>Member(Card)</th>
+                    <th>ID Payer</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>568848</td>
+                    <td>DHA-F-0000964-INS012-20180312130811</td>
+                    <td>Belhoul Speciality Hospital Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:08:18 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568846</td>
+                    <td>PF1151-A023-20180312130748</td>
+                    <td>Belhoul Life Pharmacy (Abu Dhabi)</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:08:18 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>568845</td>
+                    <td>PF1022-PBP8049128</td>
+                    <td>New Pharmacy</td>
+                    <td>JOHNNY PEVNGELISTA</td>
+                    <td>PBM_29719005_11024</td>
+                    <td>12-March-2018 11:07:57 </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Pie Chart-->
+        <div class="container-fluid charts">
+          <div class="row">
+            <div class="col-lg-6 col-xs-12 pl-0">
+              <div class="card mb-3">
+                <div class="card-header">
+                  Sum of Net
+                  <div class="d-inline float-right">
+                    <select name="chartType" id="chartType" class="fa">
+                      <option value="line" class="fa">&#xf201; <span class="select-text">Chart Type</span></option>
+                      <option value="line">Line</option>
+                      <option value="bar">Bar</option>
+                      <option value="pie">Pie</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas id="bar-chartcanvas" width="400" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xs-12 pr-0">
+              <div class="card mb-3">
+                <div class="card-header">
+                  Sum of Net
+                  <div class="d-inline float-right">
+                    <select name="chartType" id="chartType" class="fa">
+                      <option value="line" class="fa">&#xf201; <span class="select-text">Chart Type</span></option>
+                      <option value="line">Line</option>
+                      <option value="bar">Bar</option>
+                      <option value="pie">Pie</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas id="line-chartcanvas" width="400" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-xs-12 pl-0">
+              <div class="card mb-3">
+                <div class="card-header">
+                  Sum of Net
+                  <div class="d-inline float-right">
+                    <select name="chartType" id="chartType" class="fa">
+                      <option value="line" class="fa">&#xf201; <span class="select-text">Chart Type</span></option>
+                      <option value="line">Line</option>
+                      <option value="bar">Bar</option>
+                      <option value="pie">Pie</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas id="myPieChart" width="400" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xs-12 pr-0">
+              <div class="card mb-3">
+                <div class="card-header">
+                  Sum of Net
+                  <div class="d-inline float-right">
+                    <select name="chartType" id="chartType" class="fa">
+                      <option value="line" class="fa">&#xf201; <span class="select-text">Chart Type</span></option>
+                      <option value="line">Line</option>
+                      <option value="bar">Bar</option>
+                      <option value="pie">Pie</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas id="bar-chart" width="400" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Input Fields-->
+          <div class="row">
+            <div class="col p-0 input-fields">
+              <div class="card mb-3 p-2">
+                <div class="card-header pb-2">Input fields </div>
+                <div class="card-subtitle text-muted pb-4">Create and review dashboards</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control" required>
+                            <label class="form-control-placeholder" for="idType">ID Type</label>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <input type="number" class="form-control" required>
+                            <label class="form-control-placeholder" for="idno">ID Number</label>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="email" class="form-control" required>
+                          <label for="email" class="form-control-placeholder">New Email</label>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <input type="email" class="form-control" required>
+                            <label for="inputEmail5" class="form-control-placeholder">New Email</label>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <input type="email" class="form-control" required>
+                            <label for="inputEmail6" class="form-control-placeholder">New Email</label>
+                          </div>
+                        </div>
+                        <div class="form-row mt-3">
+                          <div class="form-group col-md-4">
+                            <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                              <input type="checkbox" class="custom-control-input" id="customControlInline">
+                              <label class="custom-control-label" for="customControlInline">Indeterminate
+                                Checkbox</label>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                              <input type="checkbox" class="custom-control-input" id="customControlInline1" disabled>
+                              <label class="custom-control-label" for="customControlInline1">Disabled checkbox</label>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <div class="form-check">
+                              <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlInline2" disabled>
+                                <label class="custom-control-label" for="customControlInline2">Disabled checkbox</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <input type="password" class="form-control" required>
+                        <label for="pwd" class="form-control-placeholder">After enter Data</label>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input type="password" id="inputPassword5" class="form-control" required>
+                          <label for="inputPassword5" class="form-control-placeholder">Password</label>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <input type="password" id="inputPassword6" class="form-control" required>
+                          <label for="inputPassword6" class="form-control-placeholder">Password</label>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input type="password" id="inputPassword7" class="form-control" required>
+                          <label for="inputPassword7" class="form-control-placeholder">Password</label>
+                        </div>
+                        <div class="form-group col-md-3 mt-3">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"
+                              checked>
+                            <label class="custom-control-label" for="customRadio1">Default Radio 1</label>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-3 mt-3">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Default</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input type="password" id="inputPassword7" class="form-control" required>
+                          <label for="inputPassword7" class="form-control-placeholder">Password</label>
+                        </div>
+                        <div class="form-group col-md-3 mt-3">
+                          <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                            <label class="custom-control-label" for="customSwitch1">off/on</label>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-3 mt-3">
+                          <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2">Custom color</label>
+                          </div>
+                        </div>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/.Input Fileds-->
+
+          <!--Tab Headers-->
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <div class="card mb-3">
+                <div class="card-header">Tab Headers</div>
+                <!--Simple Tabs-->
+                <div class="card-body simple-tabs row">
+                  <div class="col-md-2">
+                    <h5 class="card-subtitle pt-2">Simple Tabs</h5>
+                  </div>
+                  <div class="col-md-10">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                          aria-controls="pills-home" aria-selected="true"><i class="fa fa-calendar-alt pr-2"></i>Active
+                          Medication</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                          aria-controls="pills-profile" aria-selected="false"><i class="fa fa-bell pr-2"></i>Medication
+                          History</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                          aria-controls="pills-contact" aria-selected="false"><i class="fa fa-bullhorn pr-2"></i>Tabs
+                          34</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                        book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum.
+                      </div>
+                      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                      </div>
+                      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--/.Simple Tabs End-->
+                <!--Tabs2-->
+                <div class="card-body tabs row">
+                  <div class="col-md-2">
+                    <h5 class="card-subtitle pt-2">Tabs 2</h5>
+                  </div>
+                  <div class="col-md-10">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home2" role="tab"
+                          aria-controls="pills-home" aria-selected="true"><i class="fa fa-calendar-alt pr-2"></i>Active
+                          Medication</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile2" role="tab"
+                          aria-controls="pills-profile" aria-selected="false"><i class="fa fa-bell pr-2"></i>Medication
+                          History</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact2" role="tab"
+                          aria-controls="pills-contact" aria-selected="false"><i class="fa fa-bullhorn pr-2"></i>Tabs
+                          34</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-home2" role="tabpanel"
+                        aria-labelledby="pills-home-tab">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                        book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum.
+                      </div>
+                      <div class="tab-pane fade" id="pills-profile2" role="tabpanel"
+                        aria-labelledby="pills-profile-tab">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                      </div>
+                      <div class="tab-pane fade" id="pills-contact2" role="tabpanel"
+                        aria-labelledby="pills-contact-tab">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Tabs2 End-->
+                <!--Widzard-->
+                <div class="card-body tabs row">
+                  <div class="col-md-2">
+                    <h5 class="card-subtitle pt-2">Tabs 2</h5>
+                  </div>
+                  <div class="col-md-10 ">
+                    <div class="stepwizard">
+                      <ul class="nav">
+                        <li class="nav-item">
+                          <a class="nav-link link-step active" href="#"><span class="number">1</span>Active
+                            Medication</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link link-step disabled" href="#"><span class="number">2</span>Medication
+                            History</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link link-step disabled" href="#" tabindex="-1" aria-disabled="true"><span
+                              class="number">3</span>Tabs34</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--./Widzard End-->
+              </div>
+            </div>
+
+          </div>
+          <!--/.Tab Headers-->
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- /.content-wrapper -->
+
+      <!--Footer -->
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="row  justify-content-md-center">
+            <div class="col-md-4 px-0">
+              <div class="copyright">
+                <span><img src="img/iqvia-logo.png" style="width: 120px;">Copyright © 2018 IQVIA All Rights
+                  Reserved</span></div>
+            </div>
+            <div class="col-md-auto">
+              <ul class="nav  footer-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Terms & Conditions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- /#wrapper -->
+  </div>
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="plugins/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  <script src="plugins/datatables/jquery.dataTables.js"></script>
+  <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
+  <script src="plugins/datatables/dataTables.checkboxes.min.js"></script>
+  <script src="plugins/datatables/dataTables.select.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/my-script.js"></script>
+
+  <!-- Data table demo scripts for this page-->
+  <script src="js/charts/datatables.js"></script>
+  <script src="js/charts/chart-group-bar.js"></script>
+  <script src="js/charts/chart-group-line.js"></script>
+  <script src="js/charts/chart-pie.js"></script>
+  <script src="js/charts/chart-bar.js"></script>
+
+</body>
+
+</html>
